@@ -20,11 +20,11 @@ def restaurant_detail(request, restaurant_id):
 
 def restaurant_create(request):
     form = RestaurantForm()
-    if request.method == "POST":
-        form = RestaurantForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("restaurant-list")
+    if request.method == "POST":                # if the posted form is POST not GET
+        form = RestaurantForm(request.POST)     # then get the posted data fields
+        if form.is_valid():                     # then check if fields are valid (filled)
+            form.save()                         # then save it into database
+            return redirect("restaurant-list")  # and return to main (previuos) page
     context = {
         "create_form":form
     }

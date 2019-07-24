@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>
+        	{% block title %} <!-- Any page title here programatically -->
+        	{% endblock %}
+        </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'mystyle.css' %}">
+    </head>
+    <body>
+    	<H1 id="navbar">NAVBAR</H1>
+    	<hr>
+    	{% block content %}
+    	   <!-- Any page content here programatically -->
+    	{% endblock %}
+    	<hr>
+    	<H1 id="footer">FOOTER</H1>
+    </body>
+</html>
